@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Campa Now — Delivered in under an hour | Campa USA</title>
+<meta name="description" content="Campa Now: your favorite Campa delivered in under an hour, at the same price as the shelf. Powered by GoPuff + DoorDash." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="icon" href="assets/logo.svg" />
+</head>
+<body>
+
+<div class="announce">
+  <span class="bolt">⚡</span> <b>Now delivering in under 1 hour in New York and New Jersey</b> — powered by GoPuff + DoorDash. <a href="#now">Check your address →</a>
+</div>
+
+<header class="header">
+  <nav class="nav">
+    <a class="brand" href="index.html"><img src="assets/logo.svg" alt="Campa" /></a>
+    <div class="nav-links">
+      <a href="index.html#shop">Shop all</a>
+      <a href="index.html#shop">Cola</a>
+      <a href="index.html#shop">Fruit flavors</a>
+      <a href="index.html#shop">Cricket</a>
+      <a href="campa-now.html" style="color:#ff4d4d">Campa Now</a>
+    </div>
+    <div class="nav-right">
+      <a class="hide-sm" href="#">Store locator</a>
+      <a class="hide-sm" href="#">Our story</a>
+      <button class="hamburger" onclick="openMenu()" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+      <a href="checkout.html" class="cart-pill" onclick="event.preventDefault();openCart()">Cart <span class="cart-count" id="cartCount">2</span></a>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="now-hero" id="now">
+  <div class="wrap grid">
+    <div>
+      <div class="kick">⚡ On-demand</div>
+      <div class="eyebrow">Campa Now</div>
+      <h1 class="serif">Campa, in under an hour.</h1>
+      <div class="facts">
+        <div><span class="k">Speed</span> Under 60 minutes to your door</div>
+        <div><span class="k">Price</span> Same price as the shelf — no markup</div>
+        <div><span class="k">Hours</span> Available 8:00 AM – 11:00 PM daily</div>
+        <div><span class="k">Coverage</span> NYC/NJ, Bay Area, Chicago, Houston/Dallas, Atlanta</div>
+      </div>
+      <div class="chips-row retailer-chips">
+        <span class="chip"><img class="logo" src="assets/gopuff-icon.png" alt="GoPuff" /> Gopuff</span>
+        <span class="chip"><img class="logo" src="assets/doordash-icon.svg" alt="DoorDash" /> DoorDash</span>
+        <span class="delivery-badge"><span class="bolt">⚡</span> Under 1 hr</span>
+      </div>
+    </div>
+    <div class="now-visual">
+      <div class="float-badge"><span class="bolt">⚡</span> ~52 min near you</div>
+      <img src="assets/bottles-crop.png" alt="Campa bottles available on demand" />
+    </div>
+  </div>
+</section>
+
+<!-- ADDRESS BAR -->
+<div class="now-addrbar">
+  <div class="wrap inner">
+    <span class="lbl">Deliver to</span>
+    <div class="field">
+      <span aria-hidden="true">📍</span>
+      <input id="nowAddr" type="text" placeholder="Enter your address, e.g. 604 Broadway, New York, NY" />
+      <button class="btn btn-dark" onclick="nowCheck()">Check availability</button>
+    </div>
+    <span class="now-addr-state" id="nowAddrState"><span>✓</span> In your zone · delivered in ~52 min</span>
+  </div>
+</div>
+
+<!-- GRID -->
+<section class="now-section">
+  <div class="wrap">
+    <div class="now-gridwrap show" id="nowGridWrap">
+      <div class="now-grid" id="nowGrid"><!-- injected by app.js --></div>
+      <div class="now-disclaimer">
+        Products and pricing shown reflect live GoPuff / DoorDash inventory near you. Small-format, delivery-only sizes — your order still lands in your Campa account like any other.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- occasions + metros -->
+<section class="how" style="padding:70px 0 20px">
+  <div class="wrap">
+    <div class="eyebrow">Built for the moment</div>
+    <h2 class="serif" style="font-size:clamp(28px,3.4vw,42px);margin-top:12px;max-width:700px">Cricket match nights. Diwali parties. Whenever the cooler runs low.</h2>
+    <div class="steps now-steps-3">
+      <div class="step"><div class="icon">🏏</div><h3>Match night</h3><p>Cricket is on at 2 AM or 2 PM. Get Campa Cricket and a few 6-packs to the couch before the first over.</p></div>
+      <div class="step"><div class="icon">🪔</div><h3>Diwali party</h3><p>Guests are coming in an hour. The party bundle puts Cola, Orange and Lemon 2 L bottles at your door.</p></div>
+      <div class="step"><div class="icon">🥤</div><h3>Taste of home</h3><p>No more driving across town to the one Indian grocer that stocks it. Order from your phone.</p></div>
+    </div>
+    <div class="eyebrow" style="margin-top:46px">Launch metros</div>
+    <div class="retailer-chips" style="margin-top:14px;flex-wrap:wrap">
+      <span class="chip">New York / New Jersey</span>
+      <span class="chip">Bay Area</span>
+      <span class="chip">Chicago</span>
+      <span class="chip">Houston / Dallas</span>
+      <span class="chip">Atlanta</span>
+    </div>
+    <p style="color:var(--gray);font-size:13px;margin-top:14px">Metros chosen for South Asian community density. NYC/NJ goes live first in this concept.</p>
+  </div>
+</section>
+
+<!-- reassurance band -->
+<section class="how" style="padding:70px 0">
+  <div class="wrap">
+    <div class="eyebrow">Why Campa Now</div>
+    <h2 class="serif" style="font-size:clamp(28px,3.4vw,42px);margin-top:12px;max-width:640px">A fast, small first yes — that graduates to full DTC orders.</h2>
+    <div class="steps now-steps-3">
+      <div class="step"><div class="icon">⚡</div><h3>Need-it-now, captured</h3><p>Cricket match nights and Diwali parties do not wait for shipping. Keep the sale on Campa's own site.</p></div>
+      <div class="step"><div class="icon">🧾</div><h3>Same price as the shelf</h3><p>No surprise markup. Delivery is a small, transparent add-on at checkout.</p></div>
+      <div class="step"><div class="icon">📦</div><h3>No new ops</h3><p>GoPuff + DoorDash act as the delivery 3PL. No warehouse changes, no new fleet.</p></div>
+    </div>
+    <div class="assurance">
+      <span><span class="tick">✓</span> Order &amp; customer record stay with Campa</span>
+      <span><span class="tick">✓</span> Same checkout &amp; account</span>
+      <span><span class="tick">✓</span> Go live in 2–3 weeks</span>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="top">
+      <div class="updates">
+        <h3 class="serif">Don't miss a Campa drop.</h3>
+        <div class="toggle"><button class="btn btn-white">Email</button><button class="btn btn-outline" style="color:#fff">SMS</button></div>
+        <div class="subscribe"><input placeholder="Enter Your Email." /><button>›</button></div>
+      </div>
+      <div><div class="colhead">Support</div><ul><li><a href="#">Track your order</a></li><li><a href="#">Help center</a></li><li><a href="#">FAQs</a></li></ul></div>
+      <div><div class="colhead">About</div><ul><li><a href="#">Our story</a></li><li><a href="#">Reviews</a></li></ul></div>
+      <div><div class="colhead">Campa Now</div><ul><li><a href="campa-now.html">Check availability</a></li><li><a href="index.html#onehour">How it works</a></li><li><a href="#">Delivery zones</a></li></ul></div>
+      <div><div class="colhead">Legal</div><ul><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul></div>
+    </div>
+    <div class="base"><span>© 2026 Campa USA (concept)</span><span>Campa Now · one-hour delivery powered by Vesper Commerce · GoPuff + DoorDash</span></div>
+  </div>
+</footer>
+
+<div class="demo-ribbon"><span class="bolt">⚡</span> Vesper Commerce demo · 1-hour delivery concept</div>
+
+<script src="app.js"></script>
+</body>
+</html>

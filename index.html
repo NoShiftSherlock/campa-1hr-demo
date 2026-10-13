@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Campa USA — Refresh the Josh!</title>
+<meta name="description" content="The Great Indian Taste, now in the US. One-hour delivery in New York and New Jersey via GoPuff and DoorDash." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="icon" href="assets/logo.svg" />
+</head>
+<body>
+
+<!-- Announcement -->
+<div class="announce">
+  <span class="bolt">⚡</span> <b>Now delivering in under 1 hour in New York and New Jersey</b> — powered by GoPuff + DoorDash. <a href="#onehour">Check your address →</a>
+</div>
+
+<!-- Header -->
+<header class="header">
+  <nav class="nav">
+    <a class="brand" href="index.html"><img src="assets/logo.svg" alt="Campa" /></a>
+    <div class="nav-links">
+      <a href="#shop">Shop all</a>
+      <a href="#shop">Cola</a>
+      <a href="#shop">Fruit flavors</a>
+      <a href="#shop">Cricket</a>
+      <a href="campa-now.html" style="color:#ff4d4d">Campa Now</a>
+    </div>
+    <div class="nav-right">
+      <a class="hide-sm" href="#">Store locator</a>
+      <a class="hide-sm" href="#">Our story</a>
+      <button class="hamburger" onclick="openMenu()" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+      <a href="checkout.html" class="cart-pill" onclick="event.preventDefault();openCart()">Cart <span class="cart-count" id="cartCount">2</span></a>
+    </div>
+  </nav>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-media hero-bottles"></div>
+  <div class="wrap hero-inner">
+    <div class="delivery-badge" style="margin-bottom:22px"><span class="bolt">⚡</span> One-hour delivery, launching in NYC and NJ</div>
+    <h1 class="serif">Refresh the Josh!</h1>
+    <p class="sub">The Great Indian Taste. A 50+ years legacy, now delivered to your door in under an hour.</p>
+    <div class="hero-cta">
+      <a href="#shop" class="btn btn-white">Shop all</a>
+      <a href="#onehour" class="btn btn-outline" style="color:#fff">⚡ Get it in 1 hour</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SIGNATURE 1-HOUR DELIVERY BAND ===== -->
+<section class="delivery-band" id="onehour">
+  <div class="wrap grid">
+    <div>
+      <div class="eyebrow" style="color:rgba(255,255,255,.7)">Need it now?</div>
+      <h2 class="serif" style="margin-top:14px">Get Campa to your door in under an hour.</h2>
+      <p class="lede">Match starts in an hour? Guests arriving for Diwali? We deliver Campa from a GoPuff or DoorDash near you, same hour, same site, no app to download.</p>
+      <div class="retailer-chips" style="margin-top:24px">
+        <span class="chip"><img class="logo" src="assets/gopuff-icon.png" alt="GoPuff" /> Gopuff</span>
+        <span class="chip"><img class="logo" src="assets/doordash-icon.svg" alt="DoorDash" /> DoorDash</span>
+        <span class="delivery-badge"><span class="bolt">⚡</span> Under 1 hr</span>
+      </div>
+      <div style="margin-top:26px">
+        <a href="campa-now.html" class="btn btn-white">Browse Campa Now →</a>
+      </div>
+    </div>
+
+    <div class="addr-card">
+      <div class="row-top">
+        <div style="font-family:var(--mono);font-size:13px;letter-spacing:.04em">WHERE SHOULD WE DELIVER?</div>
+        <div class="delivery-badge"><span class="bolt">⚡</span> 1 hr</div>
+      </div>
+      <div class="addr-field">
+        <span aria-hidden="true">📍</span>
+        <input id="addrInput" type="text" placeholder="123 Main St, Jersey City, NJ" />
+        <button class="btn btn-dark" onclick="checkAvailability()">Check</button>
+      </div>
+      <div class="addr-note">Enter any NYC or NJ address to see what's available near you.</div>
+
+      <div class="avail-result" id="availResult">
+        <div class="avail-head"><span>✓</span> Available near you — delivered in under 1 hour</div>
+        <div class="mini-prod">
+          <img src="assets/cola.png" alt="" />
+          <div class="info"><div class="name">Cola · Campa Cola</div><div class="meta">6-pack · $8.99</div></div>
+          <button class="mini-add" onclick="addToCart()">Add</button>
+        </div>
+        <div class="mini-prod">
+          <img src="assets/cricket.png" alt="" />
+          <div class="info"><div class="name">Sport · Campa Cricket</div><div class="meta">Single bottle · $2.29</div></div>
+          <button class="mini-add" onclick="addToCart()">Add</button>
+        </div>
+        <div class="mini-prod">
+          <img src="assets/orange.png" alt="" />
+          <div class="info"><div class="name">Fruit · Campa Orange <span style="opacity:.6">(trial)</span></div><div class="meta">Single can · $1.79</div></div>
+          <button class="mini-add" onclick="addToCart()">Add</button>
+        </div>
+        <a href="checkout.html" class="btn btn-white btn-block" style="margin-top:16px">View cart · check out →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How it works -->
+<section class="how">
+  <div class="wrap">
+    <div class="eyebrow">How one-hour delivery works</div>
+    <h2 class="serif" style="font-size:clamp(30px,3.6vw,46px);margin-top:12px">From craving to doorstep, in the time it takes to ice the cooler.</h2>
+    <div class="steps">
+      <div class="step"><div class="num">01</div><div class="icon">📍</div><h3>Enter your address</h3><p>We check live GoPuff and DoorDash inventory near you, right on Campa's own US site.</p></div>
+      <div class="step"><div class="num">02</div><div class="icon">🛒</div><h3>Pick what's nearby</h3><p>See the Campa flavors in stock around you and add them to your cart in a tap.</p></div>
+      <div class="step"><div class="num">03</div><div class="icon">⚡</div><h3>We route the order</h3><p>Your order is picked, packed and dispatched from the nearest stocked store.</p></div>
+      <div class="step"><div class="num">04</div><div class="icon">📦</div><h3>Doorstep in an hour</h3><p>Campa arrives in under 60 minutes, and the order lives in your account like any other.</p></div>
+    </div>
+    <div class="assurance">
+      <span><span class="tick">✓</span> No new app to download</span>
+      <span><span class="tick">✓</span> Your order &amp; customer record stay with Campa</span>
+      <span><span class="tick">✓</span> Same checkout, same account</span>
+    </div>
+  </div>
+</section>
+
+<!-- Product grid -->
+<section class="section" id="shop">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Shop all Campa</div>
+        <h2 class="serif">A 50+ years legacy.<br/>The Great Indian Taste.</h2>
+      </div>
+      <p>Every flavor below is eligible for one-hour delivery in the NYC and NJ launch metro. Look for the <span style="white-space:nowrap">⚡ 1-hr</span> tag.</p>
+    </div>
+
+    <div class="prod-grid" id="prodGrid">
+      <!-- cards injected by app.js -->
+    </div>
+  </div>
+</section>
+
+<!-- Value strip -->
+<section class="value-strip">
+  <div class="wrap value-grid">
+    <div><div class="big">50+</div><p>Years of Campa Cola, one of India's most loved colas.</p></div>
+    <div><div class="big">&lt;1 hr</div><p>Target delivery time in the NYC and NJ launch metro.</p></div>
+    <div><div class="big">5</div><p>Flavors at launch: Cola, Orange, Lemon, Power Up and Cricket.</p></div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="top">
+      <div class="updates">
+        <h3 class="serif">Don't miss a Campa drop.</h3>
+        <div class="toggle">
+          <button class="btn btn-white">Email</button>
+          <button class="btn btn-outline" style="color:#fff">SMS</button>
+        </div>
+        <div class="subscribe"><input placeholder="Enter Your Email." /><button>›</button></div>
+        <p style="font-size:12px;opacity:.55;margin-top:14px;max-width:320px">*By completing this form you are signing up to receive our marketing and can unsubscribe at any time.</p>
+      </div>
+      <div><div class="colhead">Support</div><ul><li><a href="#">Track your order</a></li><li><a href="#">Help center</a></li><li><a href="#">FAQs</a></li><li><a href="#">Contact us</a></li></ul></div>
+      <div><div class="colhead">About</div><ul><li><a href="#">Our story</a></li><li><a href="#">Third-party test results</a></li><li><a href="#">Blog</a></li><li><a href="#">Reviews</a></li></ul></div>
+      <div><div class="colhead">1-Hour Delivery</div><ul><li><a href="#onehour">Check availability</a></li><li><a href="#onehour">How it works</a></li><li><a href="#">Delivery zones</a></li><li><a href="#">Powered by Vesper</a></li></ul></div>
+      <div><div class="colhead">Legal</div><ul><li><a href="#">Privacy policy</a></li><li><a href="#">Terms of service</a></li><li><a href="#">Accessibility</a></li></ul></div>
+    </div>
+    <div class="base"><span>© 2026 Campa USA (concept)</span><span>One-hour delivery powered by Vesper Commerce · GoPuff + DoorDash</span></div>
+  </div>
+</footer>
+
+<div class="demo-ribbon"><span class="bolt">⚡</span> Vesper Commerce demo · 1-hour delivery concept</div>
+
+<script src="app.js"></script>
+</body>
+</html>

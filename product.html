@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Campa Cola 12-Pack | Campa USA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="icon" href="assets/logo.svg" />
+</head>
+<body>
+
+<div class="announce">
+  <span class="bolt">⚡</span> <b>Now delivering in under 1 hour in New York and New Jersey</b> — powered by GoPuff + DoorDash. <a href="#onehr">Check your address →</a>
+</div>
+
+<!-- light header on PDP, like Campa -->
+<header class="header light">
+  <nav class="nav">
+    <a class="brand" href="index.html"><img src="assets/logo.svg" alt="Campa" /></a>
+    <div class="nav-links">
+      <a href="index.html#shop">Shop all</a>
+      <a href="index.html#shop">Cola</a>
+      <a href="index.html#shop">Fruit flavors</a>
+      <a href="index.html#shop">Cricket</a>
+      <a href="campa-now.html" style="color:#ff4d4d">Campa Now</a>
+    </div>
+    <div class="nav-right">
+      <a class="hide-sm" href="#">Store locator</a>
+      <a class="hide-sm" href="#">Our story</a>
+      <button class="hamburger" onclick="openMenu()" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+      <a href="checkout.html" class="cart-pill" onclick="event.preventDefault();openCart()">Cart <span class="cart-count" id="cartCount">2</span></a>
+    </div>
+  </nav>
+</header>
+
+<div class="wrap">
+  <div class="pdp">
+    <!-- media -->
+    <div class="pdp-media">
+      <div class="main">
+        <div class="line-flag"><span class="tag line gold"><span class="dot"></span></span> Cola</div>
+        <img src="assets/cola.png" alt="Campa Cola" />
+      </div>
+      <div class="thumbs">
+        <div><img src="assets/powerup.png" alt="" /></div>
+        <div><img src="assets/bottles-crop.png" alt="" style="max-height:100%;object-fit:cover;width:100%" /></div>
+        <div><img src="assets/orange.png" alt="" /></div>
+      </div>
+    </div>
+
+    <!-- info -->
+    <div class="pdp-info">
+      <div class="eyebrow" style="margin-bottom:10px">Cola · Best seller · 1,240 reviews ★ 4.7</div>
+      <h1 class="serif">Campa Cola</h1>
+      <p class="desc">A strong cola with the Great Indian Taste. Over 50 years of legacy in every can. Best served ice cold.</p>
+
+      <div class="price-line">
+        <span class="p">$16.99</span>
+        <span class="sep">|</span>
+        <span class="muted">12 x 12 oz cans</span>
+        <span class="sep">|</span>
+        <span class="muted">$1.42 per can</span>
+      </div>
+
+      <!-- purchase modes: Subscribe / Buy Once / 1-Hour Delivery -->
+      <div class="buy-modes" id="buyModes">
+        <button class="buy-mode" data-mode="subscribe" onclick="setMode('subscribe')">Subscribe &amp; Save 10%<small>$15.29 · every 4 wks</small></button>
+        <button class="buy-mode active" data-mode="once" onclick="setMode('once')">Buy Once<small>$16.99 · ships 2 days</small></button>
+        <button class="buy-mode onehr" data-mode="onehr" onclick="setMode('onehr')"><span class="bolt">⚡</span> 1-Hour Delivery<small>from $1.79 · under 1 hr</small></button>
+      </div>
+
+      <!-- default (subscribe/once) benefits -->
+      <div class="benefits" id="stdBenefits">
+        <div><span class="tick">✓</span> Modify &amp; cancel anytime</div>
+        <div><span class="tick">✓</span> Save 10% on each order</div>
+        <div><span class="tick">✓</span> Free Campa cooler bag with 1st order</div>
+        <div><span class="tick">✓</span> Priority customer support</div>
+      </div>
+
+      <!-- 1-hour module, shown when 1-hour mode selected -->
+      <div class="onehr-module" id="onehrModule" style="display:none">
+        <div class="top">
+          <div class="t"><span class="bolt">⚡</span> Need it today? Get it in about an hour.</div>
+          <div class="retailer-chips">
+            <span class="chip"><img class="logo" src="assets/gopuff-icon.png" alt="GoPuff" /> Gopuff</span>
+            <span class="chip"><img class="logo" src="assets/doordash-icon.svg" alt="DoorDash" /> DoorDash</span>
+          </div>
+        </div>
+        <div class="sub">Delivered from a GoPuff or DoorDash near you. Choose a delivery-only size below — perfect for trying Campa today.</div>
+        <div class="addr-field">
+          <span aria-hidden="true">📍</span>
+          <input id="pdpAddr" type="text" placeholder="123 Main St, New York, NY" />
+          <button class="btn btn-dark" onclick="pdpCheck()">Check</button>
+        </div>
+        <div id="pdpAvail" style="display:none">
+          <div class="avail-head" style="margin-top:18px;color:#7ee0c0"><span>✓</span> In stock near you · delivered in ~52 min</div>
+          <div class="mini-prod"><img src="assets/cola.png" alt=""/><div class="info"><div class="name">Single can (trial)</div><div class="meta">1 can · $1.79</div></div><button class="mini-add" onclick="addToCart()">Add</button></div>
+          <div class="mini-prod"><img src="assets/cola.png" alt=""/><div class="info"><div class="name">6-pack</div><div class="meta">6 cans · $8.99</div></div><button class="mini-add" onclick="addToCart()">Add</button></div>
+          <a href="checkout.html" class="btn btn-white btn-block" style="margin-top:14px">Check out · 1-hour delivery →</a>
+        </div>
+        <div class="pill-note">Order &amp; customer data stay in Campa's own store — routed to the nearest stocked store automatically.</div>
+      </div>
+
+      <!-- qty + add -->
+      <div class="qty-row" id="stdBuyRow">
+        <div class="qty"><button onclick="qty(-1)">−</button><span id="qtyVal">1</span><button onclick="qty(1)">+</button></div>
+        <button class="btn btn-dark add-cta btn-lg" id="addBtn" onclick="addToCart()">Add to cart — $16.99</button>
+      </div>
+
+      <div class="guarantee"><b>Satisfaction Guarantee.</b> We stand behind every can. If you're not satisfied, contact Campa customer care.</div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="top">
+      <div class="updates">
+        <h3 class="serif">Don't miss a Campa drop.</h3>
+        <div class="toggle"><button class="btn btn-white">Email</button><button class="btn btn-outline" style="color:#fff">SMS</button></div>
+        <div class="subscribe"><input placeholder="Enter Your Email." /><button>›</button></div>
+      </div>
+      <div><div class="colhead">Support</div><ul><li><a href="#">Track your order</a></li><li><a href="#">Help center</a></li><li><a href="#">FAQs</a></li></ul></div>
+      <div><div class="colhead">About</div><ul><li><a href="#">Our story</a></li><li><a href="#">Reviews</a></li></ul></div>
+      <div><div class="colhead">1-Hour Delivery</div><ul><li><a href="index.html#onehour">Check availability</a></li><li><a href="index.html#onehour">How it works</a></li></ul></div>
+      <div><div class="colhead">Legal</div><ul><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul></div>
+    </div>
+    <div class="base"><span>© 2026 Campa USA (concept)</span><span>One-hour delivery powered by Vesper Commerce · GoPuff + DoorDash</span></div>
+  </div>
+</footer>
+
+<div class="demo-ribbon"><span class="bolt">⚡</span> Vesper Commerce demo · 1-hour delivery concept</div>
+
+<script src="app.js"></script>
+</body>
+</html>
