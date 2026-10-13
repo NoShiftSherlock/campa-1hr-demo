@@ -119,7 +119,7 @@ function setMode(mode) {
   if (stdBuyRow) stdBuyRow.style.display = isOneHr ? "none" : "flex";
   const addBtn = document.getElementById("addBtn");
   if (addBtn && !isOneHr) {
-    addBtn.textContent = mode === "subscribe" ? "Subscribe — $15.29" : "Add to cart — $16.99";
+    addBtn.textContent = mode === "subscribe" ? "Subscribe, $15.29" : "Add to cart, $16.99";
   }
 }
 function pdpCheck() {
@@ -163,8 +163,8 @@ function selectPlan(el) {
 }
 function placeOrder() {
   const oneHr = document.querySelector("#shipOpts .co-opt.selected.onehr");
-  toast(oneHr ? "Order placed ⚡ Routing to nearest store — arriving in ~52 min"
-              : "Order placed ✓ Thanks — your Campa order is confirmed.");
+  toast(oneHr ? "Order placed ⚡ Routing to nearest store, arriving in ~52 min"
+              : "Order placed ✓ Thanks, your Campa order is confirmed.");
 }
 document.addEventListener("DOMContentLoaded", updateCheckoutTotals);
 
@@ -198,7 +198,7 @@ function injectCartDrawer() {
           <label><input type="checkbox" id="cartSub" onchange="toggleSub()" /> Subscribe to your cart &amp; save.</label>
           <span class="save">Save 10%</span>
         </div>
-        <button class="cart-checkout" onclick="location.href='checkout.html'" id="cartCheckoutBtn">Checkout — $33.98</button>
+        <button class="cart-checkout" onclick="location.href='checkout.html'" id="cartCheckoutBtn">Checkout, $33.98</button>
         <div class="cart-fineprint">Taxes, discounts and shipping calculated at checkout.</div>
       </div>
     </aside>`;
@@ -229,7 +229,7 @@ function renderCart() {
   if (msg) {
     if (q >= 4) msg.innerHTML = `🎉 You've unlocked a <b>free 12-pack</b>!`;
     else if (q === 3) msg.innerHTML = `Add <b>1 more 12-pack</b> to unlock a free 12-pack.`;
-    else if (q === 2) msg.innerHTML = `<span class="bolt">✓</span> Free shipping unlocked — add 1 more for a <b>free gift</b>.`;
+    else if (q === 2) msg.innerHTML = `<span class="bolt">✓</span> Free shipping unlocked, add 1 more for a <b>free gift</b>.`;
     else msg.innerHTML = `Add <b>1 more 12-pack</b> for free shipping.`;
   }
   // line item
@@ -254,7 +254,7 @@ function renderCart() {
   const head = document.getElementById("cartQtyHead");
   if (head) head.textContent = `(${CART.qty})`;
   const btn = document.getElementById("cartCheckoutBtn");
-  if (btn) btn.textContent = `Checkout — $${total.toFixed(2)}`;
+  if (btn) btn.textContent = `Checkout, $${total.toFixed(2)}`;
   setCartCount(CART.qty);
 }
 function openCart() { injectCartDrawer(); requestAnimationFrame(() => { document.getElementById("cartOverlay").classList.add("open"); document.getElementById("cartDrawer").classList.add("open"); }); }
